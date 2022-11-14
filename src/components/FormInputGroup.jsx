@@ -1,13 +1,13 @@
 import React from 'react';
 
 function FormInputGroup({
-  labe, type, value, onChange,
+  label, type, value, onChange,
 }) {
   return (
     <>
       <div className="col">
         <label htmlFor="input" className="form-label">
-          {labe}
+          {label}
         </label>
         <input
           type={type}

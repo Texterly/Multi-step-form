@@ -1,13 +1,15 @@
 import React from 'react';
 
-function Button({color, text, onClick, isDisabled}) {
+function Button({
+  color, text, onClick, isDisabled,
+}) {
   return (
     <button
-        className={`btn btn-${color}`}
-        onClick={onClick}
-        disabled={isDisabled}
+      className={`btn btn-${color}`}
+      onClick={onClick}
+      disabled={isDisabled}
     >
-        {text}
+      {text}
     </button>
   );
 }

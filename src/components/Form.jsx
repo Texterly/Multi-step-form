@@ -12,7 +12,20 @@ function Form() {
         <PersonalInfo />
         <Adress />
         <div className="mt-5">
-          <Button text="Next" color="purple" />
+          <Button
+            text="Prev"
+            color="dark me-3"
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+          />
+          <Button
+            text="Next"
+            color="purple"
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+          />
         </div>
       </form>
     </>

@@ -29,7 +29,6 @@ function Form() {
     } else {
       return <Welcome />;
     }
-    // return 'Page';
   };
   return (
     <main
@@ -40,7 +39,7 @@ function Form() {
         <h1 className="display-2">{FormTitle[page]}</h1>
         <div className="text-start">{PageDisplay()}</div>
         <div className="mt-5">
-          {page !== 0 ? (
+          {page !== 0 && page !== 3 ? (
             <Button
               text="Prev"
               color="dark me-3"
@@ -51,7 +50,7 @@ function Form() {
             />
           ) : null}
           <Button
-            text="Next"
+            text={page !== 3 ? 'Next' : 'Finish'}
             color="purple"
             onClick={(e) => {
               e.preventDefault();

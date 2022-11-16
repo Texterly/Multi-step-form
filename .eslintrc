@@ -7,6 +7,8 @@
         "react/prop-types": "off",
         "react/no-unstable-nested-components": "off",
         "react/function-component-definition": "off",
-        "no-else-return": "off"
+        "no-else-return": "off",
+        "react/self-closing-comp": "off",
+        "no-nested-ternary": "off"
     }
 }

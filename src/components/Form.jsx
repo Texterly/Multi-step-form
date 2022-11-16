@@ -8,17 +8,6 @@ import Welcome from '../pages/Welcome';
 function Form() {
   const [page, setPage] = useState(0);
   const FormTitle = ['Sing up', 'Personal Info', 'Address', 'Done'];
-  // const PageDisplay = () => {
-  //   if (page === 0) {
-  //     return <SingUp />;
-  //   } else if (page === 1){
-  //     return <PersonalInfo />;
-  //   } else if (page === 2) {
-  //     return <Adress />;
-  //   }
-  //   return 'Page';
-  // };
-
   const PageDisplay = () => {
     if (page === 0) {
       return <SingUp />;
@@ -35,8 +24,17 @@ function Form() {
       className="container shadow p-5 mt-5 rounded-3"
       style={{ maxWidth: 500 }}
     >
+      <div className="progress-bar shadow bg-secondary rounded-3">
+        <div className="div" style={{ width: page === 0 ? '1%' : page === 1 ? '33.3%' : page === 2 ? '66.6%' : '100%', backgroundColor: page === 3 ? 'green' : 'var(--purple)' }}></div>
+      </div>
       <form className="form-container">
-        <h1 className="display-2">{FormTitle[page]}</h1>
+        <h1
+          className={`"display-2" ${
+            page === 3 ? 'text-success' : 'text-pueple'
+          }`}
+        >
+          {FormTitle[page]}
+        </h1>
         <div className="text-start">{PageDisplay()}</div>
         <div className="mt-5">
           {page !== 0 && page !== 3 ? (
@@ -51,10 +49,15 @@ function Form() {
           ) : null}
           <Button
             text={page !== 3 ? 'Next' : 'Finish'}
-            color="purple"
+            color={page !== 3 ? 'purple' : 'success'}
             onClick={(e) => {
               e.preventDefault();
-              setPage((currPage) => currPage + 1);
+              if (page === FormTitle.length - 1) {
+                window.alert('Are you done with the registration');
+                window.location.reload();
+              } else {
+                setPage((currPage) => currPage + 1);
+              }
             }}
           />
         </div>

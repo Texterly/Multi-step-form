@@ -1,20 +1,20 @@
 import React from 'react';
 import FormInputGroup from '../components/FormInputGroup';
 
-function Adress() {
+function Adress({ formData, setFormData }) {
   return (
     <>
       <FormInputGroup
         type="text"
         label="Street"
-        value=""
-        onChange={(e) => console.log(e)}
+        value={formData.street}
+        onChange={(e) => setFormData({ ...formData, street: e.target.value })}
       />
       <FormInputGroup
         type="text"
         label="City"
-        value=""
-        onChange={(e) => console.log(e)}
+        value={formData.city}
+        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
       />
     </>
   );

@@ -6,17 +6,27 @@ import Button from './Button';
 import Welcome from '../pages/Welcome';
 
 function Form() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    firstName: '',
+    lastName: '',
+    userName: '',
+    street: '',
+    city: '',
+  });
   const [page, setPage] = useState(0);
   const FormTitle = ['Sing up', 'Personal Info', 'Address', 'Done'];
   const PageDisplay = () => {
     if (page === 0) {
-      return <SingUp />;
+      return <SingUp formData={formData} setFormData={setFormData} />;
     } else if (page === 1) {
-      return <PersonalInfo />;
+      return <PersonalInfo formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
-      return <Adress />;
+      return <Adress formData={formData} setFormData={setFormData} />;
     } else {
-      return <Welcome />;
+      return <Welcome formData={formData} />;
     }
   };
   return (
@@ -53,6 +63,8 @@ function Form() {
             onClick={(e) => {
               e.preventDefault();
               if (page === FormTitle.length - 1) {
+                console.log(formData);
+                // eslint-disable-next-line
                 window.alert('Are you done with the registration');
                 window.location.reload();
               } else {

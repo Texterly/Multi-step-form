@@ -9,6 +9,7 @@
         "react/function-component-definition": "off",
         "no-else-return": "off",
         "react/self-closing-comp": "off",
-        "no-nested-ternary": "off"
+        "no-nested-ternary": "off",
+        "react/jsx-one-expression-per-line": "off"
     }
 }
